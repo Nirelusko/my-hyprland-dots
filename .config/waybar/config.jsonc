@@ -1,37 +1,26 @@
 {
-  "modules-left": ["hyprland/workspaces", "hyprland/submap"], // Fixed: changed from sway/workspaces and sway/mode
-  "modules-center": ["clock", "idle_inhibitor"],
+  "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+  "modules-center": ["clock"],
   "modules-right": [
-    "tray",
-    "custom/scratchpad-indicator",
     "pulseaudio",
-    "custom/power",
+    "custom/hyprsunset",
+    "custom/power"
   ],
   "height": 45,
 
   "hyprland/submap": {
-    "format": "<span style=\"italic\">{}</span>",
+    "format": "<span style=\"italic\">{}</span>"
   },
   "network": {
     "format-wifi": "{essid} ({signalStrength}%) ",
     "format-ethernet": "{ifname} ",
     "format-disconnected": "",
     "max-length": 50,
-    "on-click": "kitty -e 'nmtui'",
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": "",
-    },
-  },
-  "tray": {
-    "icon-size": 15,
-    "spacing": 10,
+    "on-click": "kitty -e 'nmtui'"
   },
   "clock": {
-    "on-click": "gnome-calendar",
+    "format": "{:%H:%M}",
+    "on-click": "gnome-calendar"
   },
   "pulseaudio": {
     "format": "{volume}% {icon} ",
@@ -47,13 +36,21 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""],
+      "default": ["", "", ""]
     },
-    "on-click": "pavucontrol",
+    "on-click": "pavucontrol"
   },
+  "custom/hyprsunset": {
+    "exec": "pgrep --quiet -x hyprsunset && echo ' ' || echo ' '",
+    "on-click": "pgrep --quiet -x hyprsunset && pkill -x hyprsunset || hyprsunset --temperature 3500 &",
+    "interval": 1,
+    "tooltip": false
+  },
+
+
   "custom/power": {
     "format": " ",
-    "on-click": "wlogout",
+    "on-click": "wlogout"
   },
   "custom/scratchpad-indicator": {
     "format-text": "{}hi",
@@ -61,7 +58,7 @@
     "interval": 3,
     "exec": "~/.local/bin/scratchpad-indicator 2> /dev/null",
     "exec-if": "exit 0",
-    "on-click": "hyprctl dispatch togglespecialworkspace", // Fixed swaymsg command for Hyprland
-    "on-click-right": "hyprctl dispatch movetoworkspace special", // Fixed swaymsg command for Hyprland
-  },
+    "on-click": "hyprctl dispatch togglespecialworkspace",
+    "on-click-right": "hyprctl dispatch movetoworkspace special"
+  }
 }

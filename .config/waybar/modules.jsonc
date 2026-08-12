@@ -38,12 +38,6 @@
         }
     },
 
-    "tray" : {
-        "icon-size": 13,
-        "spacing": 12,
-        "cursor": true
-    },
-
     "load": {
         "interval": 30,
         "format": " {load1}%",

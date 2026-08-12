@@ -1,0 +1,29 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "source": "/home/nirelusko/.config/fastfetch/Personatransparent.png",
+    "type": "none",
+    "width": 71,
+    "preserveAspectRatio": true
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "board",
+    "kernel",
+    "uptime",
+    "processes",
+    "packages",
+    "shell",
+    "display",
+    "wm",
+    "terminal",
+    "cpu",
+    "gpu",
+    "memory",
+    "swap",
+    "disk",
+    "break"
+  ]
+}

@@ -47,3 +47,15 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+-- 1. Tell Hyprland's engine to allow tearing globally
+hl.config({
+    general = {
+        allow_tearing = true
+    }
+})
+
+-- 2. Tell Hyprland to bypass V-Sync specifically for The Witcher 2
+hl.window_rule({
+    match = { class = "steam_app_20920" },
+    immediate = true,
+})
