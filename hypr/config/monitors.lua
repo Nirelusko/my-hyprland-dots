@@ -1,0 +1,18 @@
+-- Monitor wiki https://wiki.hypr.land/Configuring/Basics/Monitors/
+-- Example: output can be found with hyprctl monitors. Edit variables.lua for the monitor outputs instead of here directly
+
+hl.monitor({
+    output = MONITOR1,
+    mode = MONITOR1_MODE,
+    position = "0x0",
+    scale = MONITOR1_SCALE,
+    vrr = 0,
+})
+
+hl.monitor({
+    output = MONITOR2,
+    mode = MONITOR2_MODE,
+    position = "2560x0",
+    scale = MONITOR2_SCALE,
+    vrr = 0,
+})
